@@ -1,0 +1,30 @@
+"""
+Se citeste de la tastatura un N si N numere dupa. Sa se afiseze suma numerelor pare aflate pe pozitii impare.
+
+INPUT:
+5
+5 6 3 2 8
+
+OUTPUT:
+8
+
+Complexity:
+    Time: O(n) = O(1 + 1 + 1 + n + 1 + n + n + 1) = O(5 + 3n)
+    Space: O(n)
+"""
+n = int(input())  #1
+line = input()  #1
+
+even_sum = 0  #1
+
+str_numbers = line.split(' ')  #n
+numbers = []  #n
+for i in range(0, n):  #n
+    numbers.append(int(str_numbers[i]))  #1
+
+for i in range(0, n):  #n
+    if i % 2 == 1 and numbers[i] % 2 == 0:  #1
+        even_sum += numbers[i]  #1
+
+
+print(even_sum)  #1
