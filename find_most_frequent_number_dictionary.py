@@ -1,6 +1,6 @@
 """
 Se da de la tastatura un numar N, dupa care se citesc N numere intr-o lista. Sa se afle care numar apare de
-cele mai multe ori in lista.
+cele mai multe ori in lista, folosind o structura de date de tip dictionar.
 
 INPUT:
 5
@@ -10,7 +10,7 @@ OUTPUT:
 6
 
 Complexity:
-    Time: O(n) = (1 + 1 + 1 + 1 + n + 1 + n^2 + 1) = (6 + 2n^2) = n^2
+    Time: O(n) = n^2
     Space: O(n) = n
 """
 
@@ -22,13 +22,17 @@ numbers = []
 for i in range(0, n):
     numbers.append(int(str_numbers[i]))
 
-counter = 0
-
+dictionary = {}
+key = ''
+value = 0
 for i in str_numbers:
-    number_of_occurences = str_numbers.count(i)
-    if number_of_occurences > counter:
-        counter = number_of_occurences
-        numbers = i
+    dictionary[i] = dictionary.get(i, 0) + 1
+    if dictionary[i] >= value:
+        value = dictionary[i]
+        key = i
 
-print (numbers)  #0?
+print(key)
+
+
+
 
